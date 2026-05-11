@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react'
 
 function figmaAssetResolver() {
   return {
+    base: '/Whispernetuidesign/', 
     name: 'figma-asset-resolver',
     resolveId(id) {
       if (id.startsWith('figma:asset/')) {
