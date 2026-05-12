@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { motion } from "motion/react";
 import { Heart, MessageCircle, Share2, MoreHorizontal, Sparkles } from "lucide-react";
 import { Avatar, AvatarFallback } from "./ui/avatar";
@@ -16,6 +17,7 @@ interface ThreadCardProps {
 }
 
 export function ThreadCard({
+  id,
   author,
   authorColor,
   timestamp,
@@ -92,7 +94,9 @@ export function ThreadCard({
         </div>
 
         {/* Content */}
-        <p className="mb-4 leading-relaxed text-[15px]">{content}</p>
+        <Link to={`/thread/${id}`} className="block">
+          <p className="mb-4 leading-relaxed text-[15px] hover:text-purple-700 transition-colors cursor-pointer">{content}</p>
+        </Link>
 
         {/* Image if present */}
         {image && (
